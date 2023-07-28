@@ -12,6 +12,14 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'index')]
     public function index()
     {
-        return $this->render('index.html.twig');
+        $name = 'Mingau';
+
+        return $this->render('index.html.twig', compact('name'));
+    }
+
+    #[Route('product/{product}', name: 'product')]
+    public function product($product)
+    {
+        return $this->render('single.html.twig', compact('product'));
     }
 }
